@@ -62,3 +62,49 @@ console.log(-1 / 0);//negative infinity
 console.log('\nisFinite() function');
 console.log(isFinite((1 / 0)));//false
 console.log(isFinite((10*5)));//true
+
+//strings 
+console.log('\nstrings');
+
+//strings are a sequence of unicode characters (represented by 1 or 2 code units)
+//to find the length of a string we can use .length objects
+
+console.log('hello'.length);//outputs 5
+
+//charAt() function will return the letter at a particular position
+console.log('hello'.charAt(4));//will return o 
+
+//.replace() will replace a string with another
+console.log('hello, world'.replace('world','mars'));//replaces world with mars
+
+//.toUpperCase turns the whole string uppercase
+console.log('hello'.toUpperCase());
+
+//variables can be null and undefined as well
+//undefined variables are assigned to nothing
+
+var MyVar = undefined;//variable set to nothing
+MyVar = null; //var is set to a non-value
+
+//boolean types are either 1 or 0 (true or false keywords)
+//false, 0, empty strings, NaN, null, and undefined are all false
+//all other values are true
+console.log('\nboolean types');
+console.log(Boolean('')); //false
+console.log(Boolean(123));//true
+//js will do the conversion automatically when put inside a an if statement
+
+//variables
+//variables are defined with let cons and var
+//let will only have a scope inside the block it was defined in
+for(let letVar = 0; letVar<10; letVar++){}//letVar only available in the loop operator
+
+//cons are not meant to be changed
+const Pi = 3.71; //setting Pi to something else will throw an error
+
+//var does not have the restriction and the scope can extend outside the block 
+//of code the variable was initiated in
+var anotherVar;//undefined var
+
+//only functions will have variables with scopes, not blocks(if statements)
+
