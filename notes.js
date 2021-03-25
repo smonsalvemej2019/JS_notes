@@ -105,6 +105,99 @@ const Pi = 3.71; //setting Pi to something else will throw an error
 //var does not have the restriction and the scope can extend outside the block 
 //of code the variable was initiated in
 var anotherVar;//undefined var
-
 //only functions will have variables with scopes, not blocks(if statements)
+
+//control structures 
+//js supports if - else statements
+console.log('\n');
+if(MyVar == undefined){
+    console.log('hello from an if control statement!');
+}
+//js also supports while and do while loops
+console.log('\n')
+
+MyVar = 0;
+while(MyVar<5){
+    console.log('Hello from a while loop');
+    MyVar++;
+}
+
+//js supports for-of and for-in loops
+//for of will iterate trough iterable objects automatically
+//iterable objects include arrays, strings, maps, sets, etc
+//for in will iterate trough enumerable properties
+console.log('\n');
+var myObj = {a: 1, b: 2, c: 3 };
+var myWord = "Hello World";
+
+for(let val of myWord)
+{
+    console.log(val);//will iterate trough each letter in the string
+}
+
+console.log('\n');
+
+for(let val in myObj)//will iterate trough the object
+{
+    console.log(val);
+    console.log(myObj[val]);
+}
+
+//we can use && and || to make logical comparisons
+//js also supports the ? operator for conditional expressions
+
+var ready = (MyVar>0) ? 'good' : 'bad'; 
+
+//js also has the equal value and type operator ===
+
+MyVar == '0'; // this is true
+MyVar === '0';//this is false
+
+//switch statements work the same as C
+//switch(Case){
+//case 1:
+// code
+// break
+//case 2:
+//  .
+//  .
+//  .
+// case n:
+//
+// default:
+//
+// }
+
+
+//objects
+console.log('\n');
+//objects in js are a type of data structure that holds name-pair values
+//the "name" is a string the "value" is any other value including objects
+
+var obj = {//object named obj
+    name: 'santi',
+    role: 'student',
+    details : {
+        hair_color: 'black',
+        age: 23
+    }
+}
+
+//we can access objects with a dot or a bracket 
+
+console.log(obj.details.hair_color);//black
+console.log(obj['details']['age']);
+
+//we can create object prototypes trough functions
+
+function student(name, role, age, hair_color){
+    this.name = name;
+    this.role = role;
+    this.age = age;
+    this.hair = hair_color;
+}
+
+var you = new student('matt','student',21,'black');//new person name matt
+
+console.log(you['name']);//we can use bracket to access the variables
 
