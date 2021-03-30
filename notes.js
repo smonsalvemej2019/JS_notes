@@ -2,7 +2,7 @@
 /*
 RUN USING CTRL + ALT + N
 or
-^ + Options + N
+ctrl + Options + N
 
 JS has the following types:
 Numbers
