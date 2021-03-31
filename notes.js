@@ -286,3 +286,19 @@ console.log('1+2+3+5+6+7+8+9 = ',addMany(1,2,3,4,5,6,7,8,9));
 
 //Js allows to set a function to a var and make it a 
 //an anonymous function as well as calling functions recursively 
+
+(function () {
+    console.log('\nHello from an anonymous function!');
+})(); // the () at the end will automatically call the function
+// if we want to pass arguments, we will do it trough that last ()
+//ex: (function(){})(passed argument)
+
+//most recent versions of js allow for the use of => operator
+//that allows easier anonymous function writing
+
+let anonymous = () => console.log('\nhello => operator!');
+/* the function above is equivalent to
+let anonymous = function () {console.log('\nhello => operator!)};
+*/ 
+anonymous();//invoking the anonymous function
+
