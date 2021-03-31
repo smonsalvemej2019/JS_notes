@@ -5,6 +5,7 @@ or
 ctrl + Options + N
 
 JS has the following types:
+********************************************************************
 Numbers
 Strings
 Boolean
@@ -16,7 +17,12 @@ Object
     RegExp
 null
 undefined
-*/ 
+********************************************************************/ 
+
+
+//********************************************************************
+//Some common basic syntaxes 
+
 console.log('\nintegers and floats');
 console.log(3/2);//outputs 1.5 not 1
 console.log(Math.floor(3/2));//will output 1 
@@ -63,6 +69,7 @@ console.log('\nisFinite() function');
 console.log(isFinite((1 / 0)));//false
 console.log(isFinite((10*5)));//true
 
+//********************************************************************
 //strings 
 console.log('\nstrings');
 
@@ -94,7 +101,9 @@ console.log(Boolean('')); //false
 console.log(Boolean(123));//true
 //js will do the conversion automatically when put inside a an if statement
 
+//********************************************************************
 //variables
+
 //variables are defined with let cons and var
 //let will only have a scope inside the block it was defined in
 for(let letVar = 0; letVar<10; letVar++){}//letVar only available in the loop operator
@@ -107,8 +116,10 @@ const Pi = 3.71; //setting Pi to something else will throw an error
 var anotherVar;//undefined var
 //only functions will have variables with scopes, not blocks(if statements)
 
+//********************************************************************
 //control structures 
 //js supports if - else statements
+
 console.log('\n');
 if(MyVar == undefined){
     console.log('hello from an if control statement!');
@@ -168,8 +179,9 @@ MyVar === '0';//this is false
 //
 // }
 
-
+//********************************************************************
 //objects
+
 console.log('\n');
 //objects in js are a type of data structure that holds name-pair values
 //the "name" is a string the "value" is any other value including objects
@@ -200,4 +212,77 @@ function student(name, role, age, hair_color){
 var you = new student('matt','student',21,'black');//new person name matt
 
 console.log(you['name']);//we can use bracket to access the variables
+//********************************************************************
+//Arrays
+console.log('\n');
+//Arrays are considered a type of object
+//arrays do not need a predefined size
+var myArray = new Array();
+myArray[0] = 'hello';
+myArray[1] = 'from';
+myArray[2] = 'array';
 
+//or
+
+var yourArr = ['pants','shirt','shoes'];
+
+//.length syntax will return the size of the array
+console.log(myArray.length); 
+
+//the .length of yourArr is 3 but Js is so flexible that we can add data 
+//into what would be considered unallocated space in C++
+
+yourArr[100] = 'socks';
+console.log(yourArr.length);//the length is 101
+
+for(let val of myArray)//we can iterate trough an array with a for-of loop
+{
+    console.log(val);
+}
+//there is different methods for arrays (see documentation)
+
+//Functions
+console.log('\n');
+
+//functions are defined with the keyword 'function'
+
+function add2(x,y)
+{
+    var tot = x+y;
+    return tot;
+}
+
+//the function add2 will take 0 or more parameters 
+//if we pass nothing ie add2(); it will return NaN
+//if we pass 3 parameters ie add2(1,2,3) it will
+//return the sum of 1+2 and ignore the 3
+
+console.log(add2());//NaN
+console.log(add2(1,2,3));//3
+
+//variables inside a function have access to a special data structure 
+//called 'arguments' inside the function scope which is an array-like structure 
+//that contains all the values being passed
+
+//example
+function addMany()
+{
+    let sum = 0;
+    //we are accessing this array that contains the values being passed
+    for(let val of arguments){
+        sum += val;
+    }
+    console.log('\nthe number of arguments being passed: ', arguments.length);
+    return sum;
+}
+//the 'arguments' adds a lot of flexibility to our functions
+console.log('1+2+3 = ',addMany(1,2,3));
+console.log('1+2+3+5+6+7+8+9 = ',addMany(1,2,3,4,5,6,7,8,9));
+
+//we can change the name of arguments using the reset 
+//parameter syntax (...newName)
+//ex: function myFunction(...argArray){}
+//the 'arguments' keyword was changed to 'argArray'
+
+//Js allows to set a function to a var and make it a 
+//an anonymous function as well as calling functions recursively 
